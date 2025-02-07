@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "jsx": "react-jsx", // позволяем использовать jsx без необходимости импортировать React вручную
+        "moduleResolution": "node", // разрешаем импортировать модули
+        "lib": ["dom", "es2020"], // подключаем типы, связанные с браузерным API и поддержку типов ECMAScript 2015
+        "module": "esnext", // определяем модульный режим для работы ts с современными функциями и совместимость с ECMAScript Modules
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@styles": ["src/styles/index.scss"],
+            "@ui-kit": ["src/ui-kit/index.ts"],
+            "@pages": ["src/pages/index.ts"],
+            "@components": ["src/components/index.ts"],
+            "@constants": ["src/utils/constants/index.ts"],
+            "@api": ["src/utils/api/index.ts"]
+        }
+    },
+    "include": ["src"]
+}

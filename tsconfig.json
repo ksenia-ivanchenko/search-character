@@ -14,7 +14,10 @@
             "@components": ["src/components/index.ts"],
             "@constants": ["src/utils/constants/index.ts"],
             "@api": ["src/utils/api/index.ts"]
-        }
+        },
+        "types": ["react", "react-dom"],
+        "skipLibCheck": true,
+        "outDir": "dist"
     },
     "include": ["src"]
 }

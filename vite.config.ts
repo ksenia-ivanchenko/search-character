@@ -2,10 +2,13 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
+const isProd = process.env.NODE_ENV === "production";
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
     server: { open: true },
+    base: isProd ? "/search-character/" : "/",
     resolve: {
         alias: {
             "@styles": path.resolve(process.cwd(), "src/styles/index.scss"),
@@ -21,6 +24,13 @@ export default defineConfig({
                 "src/utils/constants/index.ts"
             ),
             "@api": path.resolve(process.cwd(), "src/utils/api/index.ts"),
+        },
+    },
+    build: {
+        outDir: "dist",
+        assetsDir: "assets",
+        rollupOptions: {
+            input: path.resolve(__dirname, "index.html"),
         },
     },
 });
